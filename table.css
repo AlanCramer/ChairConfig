@@ -1,0 +1,23 @@
+.table {
+    display:table;
+    background: #DDDDDD;
+}
+.table-row {
+    display:table-row;
+}
+.cell {
+    display:table-cell;
+    padding:2px;
+}
+.tabcell{
+    display:table-cell;
+    padding:2px;
+    float:right;
+}
+.header {
+    font-weight:bold;
+    text-align:center;
+}
+input {
+    width: 3em;
+}
