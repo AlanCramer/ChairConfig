@@ -18,87 +18,29 @@
         <div class = "container"  >
             <h4>Chair Shape</h4>
             <div style="float:left; margin:20px">
-                <div><input name="frameShape" type="radio" value = "rect" checked>   <label for="frameShape" id="rect">No Arm</label></div>
-                <div><input name="frameShape" type="radio" value = "oval" >          <label for="frameShape" id="oval">No Arm with Shelf</label></div>
-                <div><input name="frameShape" type="radio" value = "conc" >          <label for="frameShape" id="conc">One Cut Out</label></div>
-                <div><input name="frameShape" type="radio" value = "knob" >          <label for="frameShape" id="knob">Ont Cut Out and Shelf</label></div>
-                <div><input name="frameShape" type="radio" value = "brac" >          <label for="frameShape" id="brac">Two Cut Outs</label></div>
-                <div><input name="frameShape" type="radio" value = "heart">          <label for="frameShape" id="heart">Two Cut Outs and Shelf</label></div>
+                <div><input name="frameShape" type="radio" value = "rect" checked> <label for="frameShape" id="rect">No Arm</label></div>
+                <div><input name="frameShape" type="radio" value = "oval" >        <label for="frameShape" id="oval">No Arm with Shelf</label></div>
+                <div><input name="frameShape" type="radio" value = "conc" >        <label for="frameShape" id="conc">One Cut Out</label></div>
+                <div><input name="frameShape" type="radio" value = "knob" >        <label for="frameShape" id="knob">One Cut Out and Shelf</label></div>
+                <div><input name="frameShape" type="radio" value = "brac" >        <label for="frameShape" id="brac">Two Cut Outs</label></div>
+                <div><input name="frameShape" type="radio" value = "heart">        <label for="frameShape" id="heart">Two Cut Outs and Shelf</label></div>
+                <div><input name="frameShape" type="radio" value = "arm">        <label for="frameShape" id="arm">Arm</label></div>
+                <div><input name="frameShape" type="radio" value = "arm1cut">        <label for="frameShape" id="arm1cut">Arm and One Cut Out</label></div>
+                <div><input name="frameShape" type="radio" value = "arm2cut">        <label for="frameShape" id="arm2cut">Arm and Two Cut Outs</label></div>
             </div>
             
             <img id="frameShape" src="images_b/2.bmp" alt="rectangle frame" style="width:200px; height:175px"/>
         </div>
     </div>    
-    <br>
-    <div class="container">    
-        <div class="container" >
-            <div> Cut Area </div>
-            <div class="table" >
+    <br><br><br>
 
-                <div class="table-row">
-                     <div class="cell">width (inches)</div>
-                     <div class="cell"><input id="drawarea-width" type="number" step="1" min="0" value="8" onChange="PathSketcher.UI.OnDrawAreaUpdate()" /></div>
-                </div>
-                <div class="table-row">
-                     <div class="cell">height (inches)</div>
-                     <div class="cell"><input id="drawarea-height" type="number" step="1" min="0" value="6" onChange="PathSketcher.UI.OnDrawAreaUpdate()" /></div>
-                </div>
-            </div>
-            <br>
-            <div> CAM Parameters </div>
-            <div class="table" >
-            
-                <div class="table-row">
-                    <div class="cell">
-                        <label for="right-label" class="inline">Material Depth:</label>
-                    </div>
-                    <div class="cell">
-                        <input id="matDepth" class="inparam" type="number" value=".5">
-                    </div>
-                </div>                
-                <div class="table-row">
-                    <div class="cell">
-                        <label for="right-label" class="inline">Bit Diameter:</label>
-                    </div>
-                    <div class="cell">
-                        <input id="bitDiam" type="number" value =".125">
-                    </div>
-                </div>
-                
-                <div class="table-row">
-                    <div class="cell">
-                        <label for="right-label" class="inline">Depth/Pass:</label>
-                    </div>
-                    <div class="cell">
-                        <input id="depthPerPass" type="number" value=".25">
-                    </div>
-                </div>
-                <div class="table-row">
-                    <div class="cell">
-                        <label for="right-label" class="inline">Feedrate:</label>
-                    </div>
-                    <div>
-                        <input id="feedrate" type="number" class="inparam" value="180.0">
-                    </div>  
-                    <div class="cell">
-                        <select id="feedrateDropdown" class="medium">
-                        <option value="180">Wood (medium)</option>
-                        <option value="60" >Foam (soft)</option>
-                        <option value="20" >Aluminium (hard)</option>
-                        <option value="0" >Custom</option>
-                        </select>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <br><br>
+    <div>
         <nav id="toolbar" >
-            <button id="calculateGCode" onclick="theApp.OnCalcGCode()">Calculate</button>
-            <button id="exportGCode" onclick="theApp.OnExportGCode()">Save G-Code</button>
+            <button id="generateSettings" onclick="theApp.OnGenSettings()">Generate Settings</button>
+            <button id="exportSettings" onclick="theApp.OnExportSettings()">Save Settings File</button>
         </nav>
     </div>
 
-    <h3> Press Calculate </h3>
+    <h3> Press Generate </h3>
     <p id="status"> ... Code will Go Here ... </p> <!-- this will be replaced with gcode when calculate is pressed -->
 </body>
